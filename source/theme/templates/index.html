@@ -26,12 +26,13 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-                <h3>Latest post: <a href="http://blog.rickyrobinett.com/2015/01/should-i-become-a-developer-evangelist/">Should I Become a Developer Evangelist?</a> <span class="author">by Ricky Robinett</a></h3>
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
+                        <h3>Posts</h3>
                         <ul class="must-read-posts">
-                            <li><a href="http://kevinwhinnery.com/evangelism">Thoughts on Developer Evangelism</a> <span class="author">by Kevin Whinnery</span></li>
-                            <li><a href="http://carter.rabasa.com/2012/07/17/how-to-balance-hustling-and-family/">Balancing Hustling and Family</a> <span class="author">by Carter Rabasa</span></li>
+                            {% for article in dates %}
+                                <li><a href="{{ article.link }}">{{ article.title }}</a> <span class="author">by <a href="{{ article.github }}">{{ article.author }}</a></span></li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
