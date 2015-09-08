@@ -31,7 +31,8 @@
                         <h3>Posts by Developer Evangelists</h3>
                         <ul class="must-read-posts">
                             {% for article in dates %}
-                                <li><a href="{{ article.link }}">{{ article.title }}</a> <span class="author">by <a href="{{ article.github }}">{{ article.author }}</a></span></li>
+                                <li><a href="{{ article.link }}">{{ article.title }}</a> <span class="author">by 
+                                {% if article.github %}<a href="{{ article.github }}">{{ article.author }}</a>{% else %}{{ article.author }}{% endif %}</span></li>
                             {% endfor %}
                         </ul>
                     </div>
